@@ -1,3 +1,16 @@
+<div class='navigation'>
+<ul>
+  <li><a href='#/links' class='index'>All Links</a></li>
+  <li><a href='#/shorten' class='create'>Shorten</a></li>
+  <li><a href='/logout' class='logout'>Logout</a></li>
+</ul>
+</div>
 <div id='container'>
-  <!-- Your html here -->
+  <ul ng-controller="LinksController">
+    <li ng-repeat="link in data.links">
+    <a ng-href="http://127.0.0.1:8000/{{link.code}}">
+      {{link.title}} {{link.visits}}
+    </a>
+    </li>
+  </ul>
 </div>
