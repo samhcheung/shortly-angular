@@ -40,6 +40,11 @@ describe('LinksController', function () {
     expect(Links.getAll.called).to.equal(true);
     Links.getAll.restore();
   });
+  
+  it('should successfully sign a user out', function () {
+    createController();
+    expect($scope.signout).to.be.a('function');
+  });
 
   it('should populate the data property after the call to `Links.getAll()`', function () {
     var mockLinks = [{}, {}, {}];

@@ -2,7 +2,7 @@
 <ul>
   <li><a href='#/links' class='index'>All Links</a></li>
   <li><a href='#/shorten' class='selected create'>Shorten</a></li>
-  <li><a href='/logout' class='logout'>Logout</a></li>
+  <li><a ng-click='signout()' class='logout' href=''>Logout</a></li>
 </ul>
 </div>
 <div id='container' ng-model="shortly.shorten" ng-controller="ShortenController">

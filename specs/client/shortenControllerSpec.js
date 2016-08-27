@@ -41,7 +41,24 @@ describe('ShortenController', function () {
   it('should have a addLink method on the $scope', function () {
     expect($scope.addLink).to.be.a('function');
   });
-
+  
+  it('should successfully sign a user out', function () {
+    expect($scope.signout).to.be.a('function');
+  });
+  it('should have an onType function', function () {
+    expect($scope.onType).to.be.a('function');
+  });
+  it('should accept valid urls', function () {
+    $scope.linkModel = 'http://www.google.com';
+    $scope.onType();
+    expect($scope.validText).to.equal('Is valid');
+  });
+  it('should reject invalid urls', function () {
+    $scope.linkModel = 'This should not be a valid url';
+    $scope.onType();
+    expect($scope.validText).to.equal('Is not valid');
+  });
+  
   it('should be able to create new links with addLink()', function () {
     $httpBackend.expectPOST('/api/links').respond(201, '');
     $scope.addLink();

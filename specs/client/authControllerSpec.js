@@ -55,7 +55,7 @@ describe('AuthController', function () {
   it('should have a signin method', function () {
     expect($scope.signin).to.be.a('function');
   });
-
+  
   it('should store token in localStorage after signin', function () {
     // create a fake JWT for auth
     var token = 'sjj232hwjhr3urw90rof';

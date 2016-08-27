@@ -2,18 +2,11 @@
 <ul>
   <li><a href='#/links' class='selected index'>All Links</a></li>
   <li><a href='#/shorten' class='create'>Shorten</a></li>
-  <li><a href='/logout' class='logout'>Logout</a></li>
+  <li><a href='' ng-click='signout()' class='logout'>Logout</a></li>
 </ul>
 </div>
 <div id='container' ng-controller="LinksController">
-  <input type="text" ng-model="filterBox" ng-change="onType()">
-<!--   <ul>
-    <li ng-repeat="link in data.links" ng-show ="checkFilter(link.title)">
-    <a ng-href="http://127.0.0.1:8000/{{link.code}}">
-      {{link.title}} {{link.visits}}
-    </a>
-    </li>
-  </ul> -->
+  <input type="text" ng-model="filterBox">
   <div id='container'>
     <div class='link' ng-controller="LinksController" ng-repeat="link in data.links | orderBy: '-visits'" ng-show ="checkFilter(link.title)">
       <img src='assets/redirect_icon.png'/>
