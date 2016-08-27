@@ -7,7 +7,8 @@
 </div>
 <div id='container' ng-model="shortly.shorten" ng-controller="ShortenController">
   <form ng-submit="addLink(linkModel)">
-    <input type="text" ng-model="linkModel">
+    <input type="text" ng-model="linkModel" ng-change="onType()">
+    <div ng-model="validText">{{validText}}</div>
   </form>
 </div>
 
